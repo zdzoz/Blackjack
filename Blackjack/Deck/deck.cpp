@@ -25,7 +25,7 @@ void Deck::shuffle() {
 }
 
 int Deck::size() {
-    return deck.size();
+    return (int) deck.size();
 }
 
 void Deck::printDeck() {
