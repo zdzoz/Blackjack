@@ -11,13 +11,24 @@ Deck::Deck() {
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 13; j++)
             deck.push_back(Card(i, j+1));
-    
-    cardName = {{1, "Ace"}, {11, "Jack"}, {12, "Queen"}, {13, "King"}};
-    for (int i = 2; i < 11; i++)
-        cardName[i] = std::to_string(i);
+}
+
+void Deck::shuffle() {
+    srand((unsigned int) time(nullptr));
+    std::vector<Card> temp;
+    while (deck.size() > 0) {
+        unsigned int r = (unsigned int) (rand() % deck.size());
+        temp.push_back(deck.at(r));
+        deck.erase(deck.begin() + r);
+    }
+    deck = temp;
+}
+
+int Deck::size() {
+    return deck.size();
 }
 
 void Deck::printDeck() {
     for (auto card : deck)
-        std::cout << suitName[card.getSuit()] << " : " << cardName[card.getFaceVal()] << std::endl;
+        std::cout << card.suit().name << " : " << card.face().name << std::endl;
 }

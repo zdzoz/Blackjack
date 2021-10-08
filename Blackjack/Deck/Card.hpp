@@ -9,16 +9,22 @@
 #define Card_hpp
 
 #include <stdio.h>
+#include <string>
 
 class Card {
-    int suit;
-    int faceVal;
-    
+    enum suits {clubs, diamonds, hearts, spades};
+    struct valStr {
+        int val;
+        std::string name;
+    };
+    struct valStr _suit;
+    struct valStr _face;
 public:
+    
     Card(int, int);
     
-    int getSuit();
-    int getFaceVal();
+    const valStr& suit() const { return _suit; }
+    const valStr& face() const { return _face; }
 };
 
 #endif /* Card_hpp */

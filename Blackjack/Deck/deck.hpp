@@ -9,21 +9,22 @@
 #define deck_hpp
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <iostream>
 #include <vector>
-#include <map>
 #include <string>
 #include "Card.hpp"
 
 class Deck {
     enum suits {clubs, diamonds, hearts, spades};
-    const std::string suitName[4] = {"Clubs", "Diamonds", "Hearts", "Spades"};
-    std::map<int, std::string> cardName;
     std::vector<Card> deck;
 public:
     
     Deck();
     
+    void shuffle();
+    int size();
     void printDeck();
     
 };

@@ -10,6 +10,7 @@
 
 int main() {
     Deck x;
+    x.shuffle();
     x.printDeck();
     return 0;
 }
