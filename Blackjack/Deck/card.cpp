@@ -5,7 +5,7 @@
 //  Created by Oskar Zdziarski on 10/7/21.
 //
 
-#include "Card.hpp"
+#include "card.hpp"
 
 Card::Card(int suit, int face) {
     switch (suit) {
@@ -26,14 +26,23 @@ Card::Card(int suit, int face) {
         case (1):
             this->_face = { face, "Ace" };
             break;
+        case (10):
+            this->_face = { face, "Ten" };
+            break;
         case (11):
-            this->_face = { face, "Jack" };
+            this->_face = { 10, "Jack" };
             break;
         case (12):
-            this->_face = { face, "Queen" };
+            this->_face = { 10, "Queen" };
+            break;
         case (13):
-            this->_face = { face, "King" };
+            this->_face = { 10, "King" };
+            break;
         default:
             this->_face = { face, std::to_string(face) };
     }
 };
+
+void Card::printCard() {
+    std::cout << "|-----|\n|"  << _suit.name[0] << "    |\n|  " << _face.name[0] << "  |\n|     |\n|_____|\n\n";
+}

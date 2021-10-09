@@ -13,6 +13,12 @@ Deck::Deck() {
             deck.push_back(Card(i, j+1));
 }
 
+//Deck& Deck::operator=(const Deck& d) {
+//    for (int i = 0; i < d.size(); i++)
+//        deck[i] = d.deck[i];
+//    return *this;
+//}
+
 void Deck::shuffle() {
     srand((unsigned int) time(nullptr));
     std::vector<Card> temp;
@@ -24,11 +30,23 @@ void Deck::shuffle() {
     deck = temp;
 }
 
+Card Deck::getCard() {
+    if (deck.size() == 0) {
+        std::cout << "Shuffling..\n";
+        Deck tempDeck = Deck();
+        tempDeck.shuffle();
+        deck = tempDeck.deck;
+    }
+    Card c = deck.back();
+    deck.pop_back();
+    return c;
+}
+
 int Deck::size() {
     return (int) deck.size();
 }
 
 void Deck::printDeck() {
     for (auto card : deck)
-        std::cout << card.suit().name << " : " << card.face().name << std::endl;
+        card.printCard();
 }

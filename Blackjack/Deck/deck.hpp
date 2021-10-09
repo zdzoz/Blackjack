@@ -14,7 +14,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Card.hpp"
+#include "card.hpp"
 
 class Deck {
     enum suits {clubs, diamonds, hearts, spades};
@@ -23,7 +23,10 @@ public:
     
     Deck();
     
+//    Deck& operator=(const Deck& d);
+    
     void shuffle();
+    Card getCard();
     int size();
     void printDeck();
     
