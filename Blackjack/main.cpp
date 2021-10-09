@@ -25,7 +25,7 @@ int main() {
     d.hit();
     d.hit();
     d.printHand();
-    std::cout << "Winner: Dealer\n\n";
+    std::cout << "\tWinner\n\n";
     p.printHand();
     
     return 0;
