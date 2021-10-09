@@ -5,8 +5,8 @@
 //  Created by Oskar Zdziarski on 10/7/21.
 //
 
-#ifndef Card_hpp
-#define Card_hpp
+#ifndef card_hpp
+#define card_hpp
 
 #include <stdio.h>
 #include <iostream>
