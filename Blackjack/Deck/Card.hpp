@@ -9,6 +9,7 @@
 #define Card_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <string>
 
 class Card {
@@ -25,6 +26,7 @@ public:
     
     const valStr& suit() const { return _suit; }
     const valStr& face() const { return _face; }
+    void printCard();
 };
 
 #endif /* Card_hpp */

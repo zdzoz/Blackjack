@@ -4,13 +4,29 @@
 //
 //  Created by Oskar Zdziarski on 10/7/21.
 //
+#define LOG(x) std::cout << x << std::endl
 
 #include <iostream>
 #include "deck.hpp"
+#include "player.hpp"
+
+void clear() {
+    for (int i = 0; i < 100; i++)
+        std::cout << "\n";
+}
 
 int main() {
     Deck x;
+    Player p(x);
+    Player d(x);
     x.shuffle();
-    x.printDeck();
+    p.hit();
+    p.hit();
+    d.hit();
+    d.hit();
+    d.printHand();
+    std::cout << "Winner: Dealer\n\n";
+    p.printHand();
+    
     return 0;
 }
