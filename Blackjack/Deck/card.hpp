@@ -26,7 +26,7 @@ public:
     
     const valStr& suit() const { return _suit; }
     const valStr& face() const { return _face; }
-    void printCard();
+    void printCard() const;
 };
 
 #endif /* Card_hpp */

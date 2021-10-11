@@ -10,16 +10,16 @@
 Card::Card(int suit, int face) {
     switch (suit) {
         case clubs:
-            this->_suit = { clubs, "Clubs" };
+            this->_suit = { clubs, "♣" };
             break;
         case diamonds:
-            this->_suit = { diamonds, "Diamonds" };
+            this->_suit = { diamonds, "♦" };
             break;
         case hearts:
-            this->_suit = { hearts, "Hearts" };
+            this->_suit = { hearts, "♥" };
             break;
         case spades:
-            this->_suit = { spades, "Spades" };
+            this->_suit = { spades, "♠" };
             break;
     }
     switch (face) {
@@ -43,6 +43,12 @@ Card::Card(int suit, int face) {
     }
 };
 
-void Card::printCard() {
-    std::cout << "|-----|\n|"  << _suit.name[0] << "    |\n|  " << _face.name[0] << "  |\n|     |\n|_____|\n\n";
+void Card::printCard() const {
+    std::cout << "┌───────┐\n" <<
+        "│ "<< _suit.name << "     │\n" <<
+        "│       │\n" <<
+        "│   " << _face.name[0] << "   │\n" <<
+        "│       │\n" <<
+        "│     " << _suit.name << " │\n" <<
+        "└───────┘\n\n";
 }

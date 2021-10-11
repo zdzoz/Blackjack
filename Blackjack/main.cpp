@@ -24,8 +24,16 @@ int main() {
     p.hit();
     d.hit();
     d.hit();
+    clear();
     d.printHand();
     std::cout << "\tWinner\n\n";
+    p.printHand();
+    
+    std::getchar();
+    clear();
+    
+    d.printHand();
+    std::cout << "\tLoser\n\n";
     p.printHand();
     
     return 0;
