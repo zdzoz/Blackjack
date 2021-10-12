@@ -10,8 +10,8 @@
 
 #include <stdio.h>
 #include "player.hpp"
-#include "deck.hpp"
-#include "card.hpp"
+#include "Deck/deck.hpp"
+#include "Deck/card.hpp"
 
 void game();
 

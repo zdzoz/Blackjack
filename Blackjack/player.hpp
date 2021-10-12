@@ -11,8 +11,8 @@
 #include <stdio.h>
 #include <vector>
 #include <sstream>
-#include "card.hpp"
-#include "deck.hpp"
+#include "Deck/card.hpp"
+#include "Deck/deck.hpp"
 
 class Player {
     std::vector<Card> _hand;
