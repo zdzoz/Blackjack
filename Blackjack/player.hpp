@@ -22,6 +22,7 @@ public:
     
     void hit();
     int handVal();
+    void clearHand();
     const std::vector<Card>& hand() const { return _hand; }
     void printHand();
 };

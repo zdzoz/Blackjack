@@ -32,6 +32,10 @@ int Player::handVal() {
     return total;
 }
 
+void Player::clearHand() {
+    _hand.clear();
+}
+
 void Player::printHand() {
     std::stringstream ss;
     std::string h = "";
