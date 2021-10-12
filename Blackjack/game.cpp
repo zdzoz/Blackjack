@@ -37,7 +37,7 @@ void game() {
                     std::cin.ignore();
                     clear();
                     dealer.printHand();
-                    std::cout << std::endl << std::endl << std::endl;
+                    std::cout << std::endl << std::endl << std::endl << std::endl;
                     player.printHand();
                     if (player.handVal() == 21) {bj = true; break;}
                     std::cout << "Hit (h), Stand (s)\n";
@@ -51,7 +51,7 @@ void game() {
                 do {
                     clear();
                     dealer.printHand();
-                    std::cout << std::endl << std::endl << std::endl;
+                    std::cout << std::endl << std::endl << std::endl << std::endl;
                     player.printHand();
                     dealer.hit();
                     if (bj || player.handVal() > 21) break;
@@ -64,9 +64,9 @@ void game() {
                 dealer.printHand();
                 std::cout << std::endl;
                 if (player.handVal() > 21) {
-                    std::cout << "Bust!\nYou Lose\n\n";
+                    std::cout << "Bust! You Lose\n\n";
                 } else if (dealer.handVal() > 21) {
-                    std::cout << "Dealer Bust!\nYou Win!\n\n";
+                    std::cout << "Dealer Bust! You Win!\n\n";
                 } else if (player.handVal() == dealer.handVal()) {
                     std::cout << "Pass!\n\n";
                 } else if (bj) {
@@ -78,7 +78,7 @@ void game() {
                 }
                 std::cout << std::endl;
                 player.printHand();
-                std::cout << "\nPress enter key to continue..\n";
+                std::cout << "Press enter key to continue..\n";
                 std::cin.ignore();
                 break;
             default:
