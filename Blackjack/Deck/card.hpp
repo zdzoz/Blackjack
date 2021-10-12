@@ -24,6 +24,8 @@ public:
     
     Card(int, int);
     
+    bool operator<(const Card&) const;
+    
     const valStr& suit() const { return _suit; }
     const valStr& face() const { return _face; }
     void printCard() const;

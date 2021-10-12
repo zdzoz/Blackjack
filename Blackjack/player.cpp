@@ -17,7 +17,18 @@ void Player::hit() {
 
 int Player::handVal() {
     int total = 0;
-    for (auto card : _hand) total += card.face().val;
+    bool ace = false;
+    
+    for (auto card : _hand) {
+        if (card.face().val == 1 && ace != true) {
+            total += 11;
+            ace = true;
+        } else {
+            total += card.face().val;
+        }
+    }
+    if (ace == true && total > 21)
+        total -= 10;
     return total;
 }
 

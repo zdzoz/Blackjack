@@ -43,6 +43,10 @@ Card::Card(int suit, int face) {
     }
 };
 
+bool Card::operator<(const Card& c) const {
+    return _face.val < c.face().val;
+}
+
 void Card::printCard() const {
     std::cout << "┌───────┐\n" <<
         "│ "<< _suit.name << "     │\n" <<

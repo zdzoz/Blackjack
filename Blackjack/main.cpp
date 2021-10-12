@@ -32,6 +32,8 @@ int main() {
     std::getchar();
     clear();
     
+    d.hit();
+    p.hit();
     d.printHand();
     std::cout << "\tLoser\n\n";
     p.printHand();
