@@ -13,12 +13,6 @@ Deck::Deck() {
             deck.push_back(Card(i, j+1));
 }
 
-//Deck& Deck::operator=(const Deck& d) {
-//    for (int i = 0; i < d.size(); i++)
-//        deck[i] = d.deck[i];
-//    return *this;
-//}
-
 void Deck::shuffle() {
     srand((unsigned int) time(nullptr));
     std::vector<Card> temp;
