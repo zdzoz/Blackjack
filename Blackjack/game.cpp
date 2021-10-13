@@ -10,8 +10,11 @@
 void game() {
     Deck deck;
     deck.shuffle();
-    Player dealer(deck);
-    Player player (deck);
+    Player dealer(deck, "Dealer");
+    Player player (deck, "Player");
+    int winCount = 0;
+    int passCount = 0;
+    int loseCount = 0;
     char choice;
     
     while (true) {
@@ -19,7 +22,7 @@ void game() {
         dealer.clearHand();
         bool bj = false;
         clear();
-        std::cout << "Play (p), Quit (q)\n";
+        std::cout << "Play (p), Quit (q)\t\tWin: " << winCount << "\tPass: " << passCount << "\tLose: " << loseCount << "\n";
         std::cin >> choice;
         switch (choice) {
             case 'q':
@@ -37,7 +40,7 @@ void game() {
                     std::cin.ignore();
                     clear();
                     dealer.printHand();
-                    std::cout << std::endl << std::endl << std::endl << std::endl;
+                    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
                     player.printHand();
                     if (player.handVal() == 21) {bj = true; break;}
                     std::cout << "Hit (h), Stand (s)\n";
@@ -51,7 +54,7 @@ void game() {
                 do {
                     clear();
                     dealer.printHand();
-                    std::cout << std::endl << std::endl << std::endl << std::endl;
+                    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
                     player.printHand();
                     dealer.hit();
                     if (bj || player.handVal() > 21) break;
@@ -62,20 +65,27 @@ void game() {
                 clear();
                 
                 dealer.printHand();
-                std::cout << std::endl;
+                std::cout << std::endl << "\t";
                 if (player.handVal() > 21) {
-                    std::cout << "Bust! You Lose\n\n";
+                    std::cout << "Player Bust!";
+                    loseCount++;
                 } else if (dealer.handVal() > 21) {
-                    std::cout << "Dealer Bust! You Win!\n\n";
+                    std::cout << "Dealer Bust!";
+                    winCount++;
                 } else if (player.handVal() == dealer.handVal()) {
-                    std::cout << "Pass!\n\n";
+                    std::cout << "\tPass!";
+                    passCount++;
                 } else if (bj) {
-                    std::cout << "Blackjack!\n\n";
+                    std::cout << "Blackjack!";
+                    winCount++;
                 } else if (player.handVal() > dealer.handVal()) {
-                    std::cout << "You Win!\n\n";
+                    std::cout << "  You Win!";
+                    winCount++;
                 } else {
-                    std::cout << "You Lose!\n\n";
+                    std::cout << "  You Lose!";
+                    loseCount++;
                 }
+                std::cout << "\n\n\tWin/Pass/Loss\n\t   " << winCount << "/" << passCount << "/" << loseCount << "\n\n";
                 std::cout << std::endl;
                 player.printHand();
                 std::cout << "Press enter key to continue..\n";

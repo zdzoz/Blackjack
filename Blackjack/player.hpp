@@ -11,14 +11,16 @@
 #include <stdio.h>
 #include <vector>
 #include <sstream>
+#include <string>
 #include "Deck/card.hpp"
 #include "Deck/deck.hpp"
 
 class Player {
+    std::string _name;
     std::vector<Card> _hand;
     Deck* _deck;
 public:
-    Player(Deck&);
+    Player(Deck&, std::string);
     
     void hit();
     int handVal();

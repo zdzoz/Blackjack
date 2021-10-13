@@ -7,7 +7,8 @@
 
 #include "player.hpp"
 
-Player::Player(Deck& deck) {
+Player::Player(Deck& deck, std::string name) {
+    this->_name = name;
     this->_deck = &deck;
 }
 
@@ -38,7 +39,6 @@ void Player::clearHand() {
 
 void Player::printHand() {
     std::stringstream ss;
-    std::string h = "";
     for (auto card : hand()) ss << "┌───────┐  ";
     ss << "\n";
     for (auto card : hand()) ss << "│ " << card.suit().name << "     │  ";
@@ -52,11 +52,6 @@ void Player::printHand() {
     for (auto card : hand()) ss << "│     " << card.suit().name << " │  ";
     ss << "\n";
     for (auto card : hand()) ss << "└───────┘  ";
-    ss << "\nHand Value: " << handVal() << "\n\n";
+    ss << "\n" << this->_name << ": " << handVal() << "\n\n";
     std::cout << ss.str();
-//    |-----|
-//    |     |
-//    |  A  |
-//    |     |
-//    |_____|
 }
