@@ -2,9 +2,9 @@
 
 # Blackjack
 
-### Installation
-Run: `./run.sh`
-> :warning: If the above doesn't work run `chmod +x run.sh` then try again.
+## Installation
+#### Generate Project files
+`$ premake5 [action]` 
+##### See list of possilbe actions
+`$ premake5 --help`
 
-Then run the program using:
-`./GAME`

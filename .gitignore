@@ -1,2 +1,12 @@
 .DS_Store
+.vscode
+**.sln
+**.vcxproj*
 *.xcodeproj/
+*.xcworkspace/
+Makefile
+*.make
+CMakeLists.txt
+*.cmake
+bin/
+build/
