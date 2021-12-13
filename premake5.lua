@@ -1,5 +1,3 @@
-require(".premake/cmake")
-
 workspace "Blackjack"
    configurations { "Debug", "Release" }
    language "C++"
@@ -40,3 +38,4 @@ newaction {
       print("done.")
    end
 }
+
