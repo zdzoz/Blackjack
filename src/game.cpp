@@ -16,7 +16,7 @@ void game() {
     int passCount = 0;
     int loseCount = 0;
     char choice;
-    
+
     while (true) {
         player.clearHand();
         dealer.clearHand();
@@ -35,7 +35,7 @@ void game() {
                 player.hit();
                 player.hit();
                 dealer.hit();
-                
+
                 do {
                     std::cin.ignore();
                     clear();
@@ -47,10 +47,10 @@ void game() {
                     std::cin >> choice;
                     if (choice == 'h' || choice == 'H') player.hit();
                 } while (player.handVal() < 21 && (choice == 'h' || choice == 'H'));
-                
+
                 std::cout << "Press enter key to continue..\n";
                 std::cin.ignore();
-                
+
                 do {
                     clear();
                     dealer.printHand();
@@ -61,9 +61,9 @@ void game() {
                     std::cout << "Press enter key to continue..\n";
                     std::cin.ignore();
                 } while (dealer.handVal() < 17);
-                
+
                 clear();
-                
+
                 dealer.printHand();
                 std::cout << std::endl << "\t";
                 if (player.handVal() > 21) {

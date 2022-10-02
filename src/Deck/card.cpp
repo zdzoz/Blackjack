@@ -56,3 +56,4 @@ void Card::printCard() const {
         "│     " << _suit.name << " │\n" <<
         "└───────┘\n\n";
 }
+
